@@ -1,0 +1,20 @@
+[project]
+name = "statcounter-mcp"
+version = "0.1.0"
+description = "MCP server wrapping the StatCounter v3 HTTP API"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.2.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+statcounter-mcp = "server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+include = ["server.py"]
